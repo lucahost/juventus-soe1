@@ -21,4 +21,4 @@ View a mocked customer
 
 - [Luca Hostettler](https://github.com/Unlockedluca)
 - [Marc Bischoff](https://github.com/booooza)
-- Florian Bohren
+- [Florian Bohren](https://github.com/a7xflo)
