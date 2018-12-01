@@ -10,4 +10,7 @@ public class UserMock implements IPersonDAO {
     // constructor
 
     // methods
+	public String getDisplayName() {		
+		return "Not implemented";
+	}
 }
