@@ -14,7 +14,7 @@ import ch.team2.persistence.person.NaturalPersonMock;
  * Class used to display data
  * Could be replaced due future plans with GUI
  * @author Luca Hostettler
- * @author Marc Bischoff
+ * @author Marc Bischof
  * @auhor Florian Bohren
  */
 public class ConsoleClient {
