@@ -10,3 +10,4 @@ public interface IPersonDAO {
     // methods
 	public String getDisplayName();
 }
+

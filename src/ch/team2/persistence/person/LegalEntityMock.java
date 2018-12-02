@@ -7,10 +7,16 @@ public class LegalEntityMock implements IPersonDAO {
 
     // attributes
 
+	private String companyname;
+	
     // constructor
 
+	public LegalEntityMock(String companyname) {
+		this.companyname = companyname;
+	}
+	
     // methods
 	public String getDisplayName() {
-		return "Not Implemented";
+		return this.companyname;
 	}
 }
