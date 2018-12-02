@@ -7,27 +7,27 @@ public class NaturalPersonMock implements IPersonDAO {
 
     // attributes
 	
-	private String vorname;
-	private String nachname;
+	private String firstname;
+	private String lastname;
 	
     // constructor
 	
-	public NaturalPersonMock(String vorname, String nachname) {
-		this.vorname = vorname;
-		this.nachname = nachname;
+	public NaturalPersonMock(String firstname, String lastname) {
+		this.firstname = firstname;
+		this.lastname = lastname;
 	}
 
     // methods
 	
-	public String getVorname() {
-		return this.vorname;
+	public String getFirstname() {
+		return this.firstname;
 	}
 	
-	public String getNachname() {
-		return this.nachname;
+	public String getLastname() {
+		return this.lastname;
 	}
 	
 	public String getDisplayName() {
-		return this.vorname + " " + this.nachname;
+		return this.firstname + " " + this.lastname;
 	}
 }
