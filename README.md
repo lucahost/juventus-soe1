@@ -3,7 +3,6 @@
 Educational project
 
 Implementation a small business customer managment tool
-
 ```
 Use of different design patterns:
 - Singleton
