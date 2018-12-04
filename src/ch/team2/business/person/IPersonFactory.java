@@ -15,5 +15,5 @@ public interface IPersonFactory {
 
     // methods
 
-	public IPersonDAO createPerson(PersonType personType, Address address, ContactMethod contactMethod, Relationship relationship);
+	IPersonDAO createPerson(PersonType personType, Address address, ContactMethod contactMethod, Relationship relationship);
 }

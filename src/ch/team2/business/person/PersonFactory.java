@@ -6,6 +6,7 @@ import ch.team2.business.PersonType;
 import ch.team2.business.Relationship;
 import ch.team2.persistence.person.IPersonDAO;
 import ch.team2.persistence.person.PersonDAOFactory;
+import ch.team2.presentation.ConsoleClientView;
 
 /**
  * Class used to create people
@@ -34,11 +35,16 @@ public class PersonFactory implements IPersonFactory {
 		IPersonData personData = null;
 
 		if (personType.equals(PersonType.PERSONTYPE_NATURAL)) {
-			personData = new NaturalPersonData();
+			String firstName = ConsoleClientView.getFirstName();
+			String lastName = ConsoleClientView.getLastName();
+			personData = new NaturalPersonData(firstName, lastName);
 		} else if (personType.equals(PersonType.PERSONTYP_LEGALENTITY)) {
-			personData = new LegalEntityData();
+			String companyName = ConsoleClientView.getCompanyName();
+			personData = new LegalEntityData(companyName);
 		} else if (personType.equals(PersonType.PERSONTYPE_USER)) {
-			personData = new UserData();
+			String firstName = ConsoleClientView.getFirstName();
+			String lastName = ConsoleClientView.getLastName();
+			personData = new UserData(firstName, lastName);
 		}
 		personData.setAddress(address);
 		personData.setContactMethod(contactMethod);

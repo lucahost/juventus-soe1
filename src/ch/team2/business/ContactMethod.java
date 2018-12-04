@@ -21,4 +21,17 @@ public enum ContactMethod {
 	public String getPascalCase() {
 		return this.pascalCase;
 	}
+
+	public static ContactMethod valueOf(int value) {
+		switch (value) {
+			case 1:
+				return ContactMethod.EMAIL;
+			case 2:
+				return ContactMethod.PHONE;
+			case 3:
+				return ContactMethod.LETTER;
+			default:
+				return null;
+		}
+	}
 }

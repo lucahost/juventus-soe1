@@ -13,37 +13,37 @@ public interface IPersonData {
 	// attributes
 
 	// methods
-	public int getId();
+	int getId();
 
-	public void setId(int id);
+	void setId(int id);
 
-	public String getFirstName();
+	String getFirstName();
 
-	public void setFirstName(String firstName);
+	void setFirstName(String firstName);
 
-	public String getLastName();
+	String getLastName();
 
-	public void setLastName(String lastName);
+	void setLastName(String lastName);
 
-	public String getCompanyName();
+	String getCompanyName();
 
-	public void setCompanyName(String companyName);
+	void setCompanyName(String companyName);
 
-	public String getDisplayName();
+	String getDisplayName();
 
-	public PersonType getPersonType();
+	PersonType getPersonType();
 
-	public void setPersonType(PersonType personType);
+	void setPersonType(PersonType personType);
 
-	public Address getAddress();
+	Address getAddress();
 
-	public void setAddress(Address address);
+	void setAddress(Address address);
 
-	public ContactMethod getContactMethod();
+	ContactMethod getContactMethod();
 
-	public void setContactMethod(ContactMethod contactMethod);
+	void setContactMethod(ContactMethod contactMethod);
 
-	public Relationship getRelationship();
+	Relationship getRelationship();
 
-	public void setRelationship(Relationship relationship);
+	void setRelationship(Relationship relationship);
 }
