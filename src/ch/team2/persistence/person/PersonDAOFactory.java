@@ -30,6 +30,7 @@ public class PersonDAOFactory {
 		} else if (personData.equals(PersonType.PERSONTYPE_USER)) {
 			person = new UserMock(personData);
 		}
+		PersonRepository.addPerson(person);
 		return person;
 	}
 

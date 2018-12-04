@@ -14,6 +14,7 @@ public class LegalEntityMock implements IPersonDAO {
 	// constructor
 
 	public LegalEntityMock(IPersonData personData) {
+		this.id = PersonRepository.getNextId();
 		this.companyName = personData.getCompanyName();
 	}
 

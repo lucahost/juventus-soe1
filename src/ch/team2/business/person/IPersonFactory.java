@@ -11,9 +11,11 @@ import ch.team2.persistence.person.IPersonDAO;
  */
 public interface IPersonFactory {
 
-    // attributes
+	// attributes
 
-    // methods
+	// methods
 
 	IPersonDAO createPerson(PersonType personType, Address address, ContactMethod contactMethod, Relationship relationship);
+
+	IPersonDAO displayPerson(int personId);
 }

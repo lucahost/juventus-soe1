@@ -1,28 +1,32 @@
 package ch.team2.persistence.person;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Mocked db class to store persons
  */
 public class PersonRepository {
 
 	// attributes
-	private static IPersonDAO[] persons;
+	private static List<IPersonDAO> persons = new ArrayList<>();
 
 	// constructor
 
 	// method
 
-	public static IPersonDAO[] getPersons() {
+	public static List<IPersonDAO> getPersons() {
 		return persons;
 	}
 
 
 	/**
-	 *	Returns the next personId as arrays are zero indexed
+	 * Returns the next personId as arrays are zero indexed
+	 *
 	 * @return int nextId
 	 */
 	public static int getNextId() {
-		return persons.length;
+		return persons.size();
 	}
 
 	public static IPersonDAO getPersonById(int id) {
@@ -32,5 +36,9 @@ public class PersonRepository {
 			}
 		}
 		return null;
+	}
+
+	public static void addPerson(IPersonDAO person){
+		persons.add(person);
 	}
 }

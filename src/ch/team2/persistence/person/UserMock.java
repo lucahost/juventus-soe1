@@ -15,6 +15,7 @@ public class UserMock implements IPersonDAO {
 	// constructor
 
 	public UserMock(IPersonData personData) {
+		this.id = PersonRepository.getNextId();
 		this.firstName = personData.getFirstName();
 		this.lastName = personData.getLastName();
 	}

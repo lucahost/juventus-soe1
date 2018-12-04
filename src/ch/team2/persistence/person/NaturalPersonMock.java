@@ -15,6 +15,7 @@ public class NaturalPersonMock implements IPersonDAO {
 	// constructor
 
 	public NaturalPersonMock(IPersonData personData) {
+		this.id = PersonRepository.getNextId();
 		this.firstName = personData.getFirstName();
 		this.lastName = personData.getLastName();
 	}

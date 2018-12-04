@@ -31,6 +31,11 @@ public class PersonFactory implements IPersonFactory {
 		return dbPerson;
 	}
 
+	public IPersonDAO displayPerson(int personId) {
+		return PersonDAOFactory.getInstance().getPerson(personId);
+	}
+
+
 	public static IPersonData convert(PersonType personType, Address address, ContactMethod contactMethod, Relationship relationship) {
 		IPersonData personData = null;
 
