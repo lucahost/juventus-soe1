@@ -37,17 +37,17 @@ public class ConsoleClient {
                         {
                             // Natürliche Person
                             case 1:
-                                ConsoleClientController.createPersonWithoutScan("1");
+                                ConsoleClientController.createPerson("1");
                                 break;
                             // Juristische Person
                             case 2:
                                 System.out.println("TODO: Juristische Person anlegen\n");
-                                ConsoleClientController.createPersonWithoutScan("2");
+                                ConsoleClientController.createPerson("2");
                                 break;
                             // Systembenutzer
                             case 3:
                                 System.out.println("TODO: Systembenutzer anlegen\n");
-                                ConsoleClientController.createPersonWithoutScan("3");
+                                ConsoleClientController.createPerson("3");
                                 break;
                             // Zurück
                             case 9:
