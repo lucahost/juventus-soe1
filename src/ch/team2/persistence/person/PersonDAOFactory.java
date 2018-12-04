@@ -8,32 +8,32 @@ import ch.team2.business.person.IPersonData;
  * Used to create mocks
  */
 public class PersonDAOFactory {
-    // attributes
-    private static PersonDAOFactory ourInstance = new PersonDAOFactory();
+	// attributes
+	private static PersonDAOFactory ourInstance = new PersonDAOFactory();
 
-    // constructor
-    private PersonDAOFactory() {
-    }
+	// constructor
+	private PersonDAOFactory() {
+	}
 
-    // methods
-    public static PersonDAOFactory getInstance() {
-        return ourInstance;
-    }
+	// methods
+	public static PersonDAOFactory getInstance() {
+		return ourInstance;
+	}
 
 
-	public static IPersonDAO createPerson(IPersonData businessPerson){
+	public static IPersonDAO createPerson(IPersonData personData) {
 		IPersonDAO person = null;
-		if(businessPerson.getPersonType().equals(PersonType.PERSONTYPE_NATURAL)) {
-			person = new NaturalPersonMock("Florian","Bohren");
-		} else if(businessPerson.equals(PersonType.PERSONTYP_LEGALENTITY)) {
-			person = new LegalEntityMock(businessPerson.getDisplayName());
-		} else if(businessPerson.equals(PersonType.PERSONTYPE_USER)) {
-			person = new UserMock(businessPerson.getFirstName(),businessPerson.getLastName());
+		if (personData.getPersonType().equals(PersonType.PERSONTYPE_NATURAL)) {
+			person = new NaturalPersonMock(personData);
+		} else if (personData.equals(PersonType.PERSONTYP_LEGALENTITY)) {
+			person = new LegalEntityMock(personData);
+		} else if (personData.equals(PersonType.PERSONTYPE_USER)) {
+			person = new UserMock(personData);
 		}
 		return person;
 	}
 
-	public static IPersonDAO getPerson(int personId){
+	public static IPersonDAO getPerson(int personId) {
 		return PersonRepository.getPersonById(personId);
 	}
 }

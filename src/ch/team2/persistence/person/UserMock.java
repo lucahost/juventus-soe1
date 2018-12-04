@@ -1,5 +1,7 @@
 package ch.team2.persistence.person;
 
+import ch.team2.business.person.IPersonData;
+
 /**
  * User DB Mock
  */
@@ -7,14 +9,14 @@ public class UserMock implements IPersonDAO {
 
 	// attributes
 	private int id;
-	private String vorname;
-	private String nachname;
+	private String firstName;
+	private String lastName;
 
 	// constructor
 
-	public UserMock(String vorname, String nachname) {
-		this.vorname = vorname;
-		this.nachname = nachname;
+	public UserMock(IPersonData personData) {
+		this.firstName = personData.getFirstName();
+		this.lastName = personData.getLastName();
 	}
 
 
@@ -24,15 +26,15 @@ public class UserMock implements IPersonDAO {
 		return this.id;
 	}
 
-	public String getVorname() {
-		return this.vorname;
+	public String getFirstName() {
+		return this.firstName;
 	}
 
-	public String getNachname() {
-		return this.nachname;
+	public String getLastName() {
+		return this.lastName;
 	}
 
 	public String getDisplayName() {
-		return this.vorname + " " + this.nachname;
+		return this.firstName + " " + this.lastName;
 	}
 }

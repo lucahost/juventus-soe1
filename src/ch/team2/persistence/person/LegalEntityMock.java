@@ -1,5 +1,7 @@
 package ch.team2.persistence.person;
 
+import ch.team2.business.person.IPersonData;
+
 /**
  * LegalEntity DB Mock
  */
@@ -7,12 +9,12 @@ public class LegalEntityMock implements IPersonDAO {
 
 	// attributes
 	private int id;
-	private String companyname;
+	private String companyName;
 
 	// constructor
 
-	public LegalEntityMock(String companyname) {
-		this.companyname = companyname;
+	public LegalEntityMock(IPersonData personData) {
+		this.companyName = personData.getCompanyName();
 	}
 
 	// methods
@@ -21,6 +23,6 @@ public class LegalEntityMock implements IPersonDAO {
 	}
 
 	public String getDisplayName() {
-		return this.companyname;
+		return this.companyName;
 	}
 }
