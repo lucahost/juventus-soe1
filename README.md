@@ -1,11 +1,16 @@
 # Juventus-SOE 1
 ```
-Educational project for education purpose
+Educational project
 
 Implementation a small business customer managment tool
-
-#ConsoleApplication
 ```
+Use of different design patterns:
+- Singleton
+- Interface
+- Factory
+- Abstraction
+- Component
+
 
 # Functions
 
