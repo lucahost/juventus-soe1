@@ -32,4 +32,8 @@ public class PersonDAOFactory {
 		}
 		return person;
 	}
+
+	public static IPersonDAO getPerson(int personId){
+		return PersonRepository.getPersonById(personId);
+	}
 }
