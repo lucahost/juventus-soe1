@@ -11,6 +11,7 @@ import ch.team2.business.Relationship;
 public abstract class PersonDataBase implements IPersonData {
 
 	// attributes
+	private int id;
 	private String firstName;
 	private String lastName;
 	private String companyName;
@@ -20,6 +21,16 @@ public abstract class PersonDataBase implements IPersonData {
 	private Relationship relationship;
 
 	// methods
+	@Override
+	public int getId() {
+		return this.id;
+	}
+
+	@Override
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	@Override
 	public String getFirstName() {
 		return this.firstName;
@@ -58,11 +69,11 @@ public abstract class PersonDataBase implements IPersonData {
 		return this.getCompanyName();
 	}
 
-	public PersonType getPersonType(){
+	public PersonType getPersonType() {
 		return this.personType;
 	}
 
-	public void setPersonType(PersonType personType){
+	public void setPersonType(PersonType personType) {
 		this.personType = personType;
 	}
 

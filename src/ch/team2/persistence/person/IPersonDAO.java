@@ -8,6 +8,8 @@ public interface IPersonDAO {
     // attributes
 
     // methods
+	public int getId();
+
 	public String getDisplayName();
 }
 

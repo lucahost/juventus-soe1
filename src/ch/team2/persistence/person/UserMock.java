@@ -5,29 +5,33 @@ package ch.team2.persistence.person;
  */
 public class UserMock implements IPersonDAO {
 
-    // attributes
-
+	// attributes
+	private int id;
 	private String vorname;
 	private String nachname;
-	
-    // constructor
+
+	// constructor
 
 	public UserMock(String vorname, String nachname) {
 		this.vorname = vorname;
 		this.nachname = nachname;
 	}
 
-	
-    // methods
-	
+
+	// methods
+
+	public int getId() {
+		return this.id;
+	}
+
 	public String getVorname() {
 		return this.vorname;
 	}
-	
+
 	public String getNachname() {
 		return this.nachname;
 	}
-	
+
 	public String getDisplayName() {
 		return this.vorname + " " + this.nachname;
 	}

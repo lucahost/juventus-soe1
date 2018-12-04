@@ -5,17 +5,21 @@ package ch.team2.persistence.person;
  */
 public class LegalEntityMock implements IPersonDAO {
 
-    // attributes
-
+	// attributes
+	private int id;
 	private String companyname;
-	
-    // constructor
+
+	// constructor
 
 	public LegalEntityMock(String companyname) {
 		this.companyname = companyname;
 	}
-	
-    // methods
+
+	// methods
+	public int getId() {
+		return this.id;
+	}
+
 	public String getDisplayName() {
 		return this.companyname;
 	}

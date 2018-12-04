@@ -13,6 +13,10 @@ public interface IPersonData {
 	// attributes
 
 	// methods
+	public int getId();
+
+	public void setId(int id);
+
 	public String getFirstName();
 
 	public void setFirstName(String firstName);
