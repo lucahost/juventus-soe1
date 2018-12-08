@@ -25,10 +25,6 @@ public class PersonDAOFactory {
 		IPersonDAO person = null;
 		if (personData.getPersonType().equals(PersonType.PERSONTYPE_NATURAL)) {
 			person = new NaturalPersonMock(personData);
-		} else if (personData.equals(PersonType.PERSONTYP_LEGALENTITY)) {
-			person = new LegalEntityMock(personData);
-		} else if (personData.equals(PersonType.PERSONTYPE_USER)) {
-			person = new UserMock(personData);
 		}
 		PersonRepository.addPerson(person);
 		return person;
