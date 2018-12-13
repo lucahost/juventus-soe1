@@ -11,10 +11,13 @@ public class PersonRepository {
 	// attributes
 	private static List<IPersonDAO> persons = new ArrayList<>();
 
-	// constructor
+	// methods
 
-	// method
-
+	/**
+	 * Return all saved persons
+	 *
+	 * @return <List>IPersonDAO</List>
+	 */
 	public static List<IPersonDAO> getPersons() {
 		return persons;
 	}
@@ -29,16 +32,26 @@ public class PersonRepository {
 		return persons.size();
 	}
 
-	public static IPersonDAO getPersonById(int id) {
+	/**
+	 * @param personId required param the personId
+	 * @return IPersonDAO a person
+	 */
+	public static IPersonDAO getPersonById(int personId) {
 		for (IPersonDAO person : persons) {
-			if (person.getId() == id) {
+			if (person.getId() == personId) {
 				return person;
 			}
 		}
 		return null;
 	}
 
-	public static void addPerson(IPersonDAO person){
+
+	/**
+	 * Create a person and save in the the list
+	 *
+	 * @param person the person to save
+	 */
+	public static void addPerson(IPersonDAO person) {
 		persons.add(person);
 	}
 }

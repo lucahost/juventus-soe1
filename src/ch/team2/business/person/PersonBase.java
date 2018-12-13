@@ -1,19 +1,18 @@
 package ch.team2.business.person;
-import ch.team2.business.PersonType;
 
+import ch.team2.business.PersonType;
 
 /**
  * Abstract Class for persons
  */
-public abstract class PersonDataBase implements IPersonData {
-
+public abstract class PersonBase implements IPerson {
 	// attributes
 	private int id;
 	private PersonType personType;
 	private String firstName;
 	private String lastName;
 
-	// methods
+	// methods - getter and setter
 	@Override
 	public int getId() {
 		return this.id;
@@ -43,7 +42,6 @@ public abstract class PersonDataBase implements IPersonData {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-
 
 	public PersonType getPersonType() {
 		return this.personType;

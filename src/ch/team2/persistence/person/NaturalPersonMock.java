@@ -1,6 +1,6 @@
 package ch.team2.persistence.person;
 
-import ch.team2.business.person.IPersonData;
+import ch.team2.business.person.IPerson;
 
 /**
  * NaturalPerson DB Mock
@@ -8,13 +8,14 @@ import ch.team2.business.person.IPersonData;
 public class NaturalPersonMock implements IPersonDAO {
 
 	// attributes
+
 	private int id;
 	private String firstName;
 	private String lastName;
 
 	// constructor
 
-	public NaturalPersonMock(IPersonData personData) {
+	public NaturalPersonMock(IPerson personData) {
 		this.id = PersonRepository.getNextId();
 		this.firstName = personData.getFirstName();
 		this.lastName = personData.getLastName();
@@ -35,6 +36,6 @@ public class NaturalPersonMock implements IPersonDAO {
 	}
 
 	public String getDisplayName() {
-		return this.firstName + " " + this.lastName;
+		return this.getFirstName() + " " + this.getLastName();
 	}
 }

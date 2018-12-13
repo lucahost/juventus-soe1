@@ -5,8 +5,7 @@ import ch.team2.business.PersonType;
 /**
  * Interface for PersonBase
  */
-public interface IPersonData {
-
+public interface IPerson {
 	// attributes
 
 	// methods
