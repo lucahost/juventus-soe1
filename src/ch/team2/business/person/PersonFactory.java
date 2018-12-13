@@ -27,9 +27,10 @@ public class PersonFactory implements IPersonFactory {
 		return dbPerson;
 	}
 
-	public IPersonDAO displayPerson(int personId) {
+	public String displayPerson(int personId) {
 
-		return PersonDAOFactory.getInstance().getPerson(personId);
+		return PersonDAOFactory.getInstance().
+				getPerson(personId).getDisplayName();
 	}
 
 
