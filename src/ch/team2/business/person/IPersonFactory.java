@@ -1,6 +1,5 @@
 package ch.team2.business.person;
 
-import ch.team2.business.PersonType;
 import ch.team2.persistence.person.IPersonDAO;
 
 /**

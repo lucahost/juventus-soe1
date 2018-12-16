@@ -1,4 +1,4 @@
-package ch.team2.business;
+package ch.team2.business.person;
 
 public enum PersonType {
 	PERSONTYPE_NATURAL("natural"),

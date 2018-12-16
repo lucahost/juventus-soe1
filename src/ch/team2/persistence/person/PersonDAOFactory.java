@@ -1,6 +1,6 @@
 package ch.team2.persistence.person;
 
-import ch.team2.business.PersonType;
+import ch.team2.business.person.PersonType;
 import ch.team2.business.person.IPerson;
 
 /**

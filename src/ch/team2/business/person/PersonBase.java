@@ -1,7 +1,5 @@
 package ch.team2.business.person;
 
-import ch.team2.business.PersonType;
-
 /**
  * Abstract Class for persons
  */

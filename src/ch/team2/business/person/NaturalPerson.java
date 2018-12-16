@@ -1,7 +1,5 @@
 package ch.team2.business.person;
 
-import ch.team2.business.PersonType;
-
 /**
  * Business Class for a natural person.
  * A physic person being (human)

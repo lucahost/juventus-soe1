@@ -1,6 +1,6 @@
 package ch.team2.presentation;
 
-import ch.team2.business.PersonType;
+import ch.team2.business.person.PersonType;
 import ch.team2.business.person.IPersonFactory;
 import ch.team2.business.person.PersonFactory;
 import ch.team2.persistence.person.IPersonDAO;
