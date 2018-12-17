@@ -14,15 +14,11 @@ class ConsoleClientTest {
     public void testConsoleClientCanCreatePerson() {
         IPersonFactory personFactory = PersonFactory.getInstance();
 
-        IPersonDAO testPerson = personFactory.createPerson(
+        String testPersonId = personFactory.createPerson(
                 PersonType.PERSONTYPE_NATURAL,
                 "Max",
                 "Mustermann"
         );
-
-        assertEquals(personFactory.displayPerson(0), "Max Mustermann");
-
+        assertNotNull(testPersonId);
     }
-
-
 }
