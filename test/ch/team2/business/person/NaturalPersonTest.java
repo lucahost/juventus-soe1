@@ -1,8 +1,10 @@
 package ch.team2.business.person;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.jupiter.api.Test;
+
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 class NaturalPersonTest {
 	// TODO: do we need to create the object with "new" for every test case?
