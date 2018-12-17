@@ -22,21 +22,20 @@ public class PersonRepository {
 		return persons;
 	}
 
-
 	/**
 	 * Returns the next personId as arrays are zero indexed
 	 *
 	 * @return int nextId
 	 */
-	public static int getNextId() {
-		return persons.size();
+	public static String getNextId() {
+		return java.util.UUID.randomUUID().toString();
 	}
 
 	/**
 	 * @param personId required param the personId
 	 * @return IPersonDAO a person
 	 */
-	public static IPersonDAO getPersonById(int personId) {
+	public static IPersonDAO getPersonById(String personId) {
 		for (IPersonDAO person : persons) {
 			if (person.getId() == personId) {
 				return person;

@@ -19,6 +19,8 @@ public interface IPerson {
 
 	void setLastName(String lastName);
 
+	String getDisplayName();
+
 	PersonType getPersonType();
 
 	void setPersonType(PersonType personType);

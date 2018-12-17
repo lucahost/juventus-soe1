@@ -15,5 +15,10 @@ public class NaturalPerson extends PersonBase {
 		this.setPersonType(PersonType.PERSONTYPE_NATURAL);
 	}
 
+	public String getDisplayName() {
+		return this.getFirstName() + " " + this.getLastName();
+	}
+
 	// methods
+
 }

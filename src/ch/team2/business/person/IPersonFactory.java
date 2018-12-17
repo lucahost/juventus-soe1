@@ -1,6 +1,6 @@
 package ch.team2.business.person;
 
-import ch.team2.persistence.person.IPersonDAO;
+import java.util.List;
 
 /**
  * Interface for PersonFactory
@@ -15,9 +15,9 @@ public interface IPersonFactory {
 	 * @param personType the personType can be found in person.PersonType
 	 * @param firstName  the FirstName of the person
 	 * @param lastName   the LastName of the person
-	 * @return IPersonDAO
+	 * @return IPerson
 	 */
-	IPersonDAO createPerson(PersonType personType, String firstName, String lastName);
+	String createPerson(PersonType personType, String firstName, String lastName);
 
 	/**
 	 * Declare method to return the displayName of a person
@@ -25,7 +25,14 @@ public interface IPersonFactory {
 	 * @param personId
 	 * @return String displayName
 	 */
-	String displayPerson(int personId);
+	IPerson displayPerson(String personId);
 
+	/**
+	 * Declare method to return a list of a people
+	 *
+	 * @param personType
+	 * @return List of People with same Type
+	 */
+	List<IPerson> displayPerson(PersonType personType);
 }
 
