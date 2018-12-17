@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-class NaturalPersonTest {
+public class NaturalPersonTest {
 	// TODO: do we need to create the object with "new" for every test case?
 
 	@Test
