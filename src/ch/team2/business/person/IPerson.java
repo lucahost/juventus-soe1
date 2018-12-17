@@ -7,9 +7,7 @@ public interface IPerson {
 	// attributes
 
 	// methods
-	int getId();
-
-	void setId(int id);
+	void setId(String id);
 
 	String getFirstName();
 

@@ -38,10 +38,6 @@ public class NaturalPersonMock implements IPersonDAO {
 		return this.lastName;
 	}
 
-	public String getDisplayName() {
-		return this.getFirstName() + " " + this.getLastName();
-	}
-
 	public PersonType getPersonType() {
 		return this.personType;
 	}

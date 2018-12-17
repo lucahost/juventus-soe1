@@ -1,6 +1,5 @@
 package ch.team2.persistence.person;
 
-import ch.team2.business.person.PersonType;
 import ch.team2.business.person.IPerson;
 
 import java.util.List;
@@ -25,20 +24,24 @@ public class PersonDAOFactory implements IPersonDAOFactory {
 
 	public IPersonDAO createPerson(IPerson personData) {
 		IPersonDAO person = null;
-		switch(personData.getPersonType()){
-			case PERSONTYPE_NATURAL:
-				person = new NaturalPersonMock(personData);
-				break;
-			default:
-				return null;
+		if (personData != null) {
+			switch (personData.getPersonType()) {
+				case PERSONTYPE_NATURAL:
+					person = new NaturalPersonMock(personData);
+					break;
+			}
+			PersonRepository.addPerson(person);
+			return person;
+		} else{
+			throw new IllegalArgumentException("personData is null");
 		}
-		PersonRepository.addPerson(person);
-		return person;
 	}
 
 	public IPersonDAO getPerson(String personId) {
 		return PersonRepository.getPersonById(personId);
 	}
 
-	public List<IPersonDAO> getPeople() { return PersonRepository.getPersons(); }
+	public List<IPersonDAO> getPeople() {
+		return PersonRepository.getPersons();
+	}
 }

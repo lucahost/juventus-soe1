@@ -54,31 +54,36 @@ public class PersonFactory implements IPersonFactory {
 		IPersonDAOFactory personDAOFactory = PersonDAOFactory.getInstance();
 		List<IPerson> retList = new ArrayList<IPerson>();
 		List<IPersonDAO> dbPeople = personDAOFactory.getPeople();
-		if (dbPeople != null) {
-			for(IPersonDAO dbPerson: dbPeople){
-				IPerson person = convert(dbPerson);
-				retList.add(person);
+		if (dbPeople != null && dbPeople.size() >= 0) {
+			for (IPersonDAO dbPerson : dbPeople) {
+				if(dbPerson.getPersonType() == personType){
+					IPerson person = convert(dbPerson);
+					retList.add(person);
+				}
 			}
-		} else {
-			throw new IllegalArgumentException("no people found");
 		}
 		return retList;
 	}
 
 
 	public static IPerson convert(PersonType personType, String firstName, String lastName) {
+		IPerson person = null;
 		switch (personType) {
 			case PERSONTYPE_NATURAL:
-				return new NaturalPerson(firstName, lastName);
+				person = new NaturalPerson(firstName, lastName);
+				break;
 		}
-		return null;
+		return person;
 	}
 
 	public static IPerson convert(IPersonDAO dbPerson) {
+		IPerson person = null;
+
 		switch (dbPerson.getPersonType()) {
 			case PERSONTYPE_NATURAL:
-				return new NaturalPerson(dbPerson.getFirstName(), dbPerson.getLastName());
+				person = new NaturalPerson(dbPerson.getFirstName(), dbPerson.getLastName());
 		}
-		return null;
+		person.setId(dbPerson.getId());
+		return person;
 	}
 }

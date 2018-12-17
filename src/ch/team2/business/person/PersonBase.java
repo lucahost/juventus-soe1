@@ -5,19 +5,15 @@ package ch.team2.business.person;
  */
 public abstract class PersonBase implements IPerson {
 	// attributes
-	private int id;
+	private String id;
 	private PersonType personType;
 	private String firstName;
 	private String lastName;
 
 	// methods - getter and setter
-	@Override
-	public int getId() {
-		return this.id;
-	}
 
 	@Override
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

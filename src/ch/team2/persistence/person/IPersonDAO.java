@@ -9,10 +9,8 @@ public interface IPersonDAO {
 
     // attributes
 
-    // getters and setters
+    // getters
 	String getId();
-
-	String getDisplayName();
 
 	String getFirstName();
 
