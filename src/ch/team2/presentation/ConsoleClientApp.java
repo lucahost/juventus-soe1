@@ -43,9 +43,9 @@ public class ConsoleClientApp {
 	/**
 	 * This methods creates a person by PersonType, Firstname and Lastname
 	 * Saves it to the db
-	 * @param personType
-	 * @param firstName
-	 * @param lastName
+	 * @param personType personType
+	 * @param firstName String firstName
+	 * @param lastName String lastName
 	 * @return the ID of the newly created person
 	 */
 	public static String createPerson(PersonType personType, String firstName, String lastName){
@@ -59,7 +59,7 @@ public class ConsoleClientApp {
 
 	/**
 	 * Displays a person by the id
-	 * @param personId
+	 * @param personId String personId
 	 */
 	public static void displayPerson(String personId){
 		IPersonFactory personFactory = PersonFactory.getInstance();
@@ -70,8 +70,8 @@ public class ConsoleClientApp {
 
 	/**
 	 * Displays all people in db by their given type
-	 * @param personType
-	 * @return <List>IPerson</List> all people with the same type
+	 * @param personType personType
+	 * @return IPerson all people with the same type
 	 */
 	public static List<IPerson> displayPeople(PersonType personType){
 		IPersonFactory personFactory = PersonFactory.getInstance();

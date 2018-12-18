@@ -16,7 +16,7 @@ public class PersonRepository {
 	/**
 	 * Return all saved persons
 	 *
-	 * @return <List>IPersonDAO</List>
+	 * @return IPersonDAO
 	 */
 	public static List<IPersonDAO> getPersons() {
 		return persons;

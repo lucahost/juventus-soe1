@@ -19,7 +19,7 @@ public class BCNaturalPerson extends ACPerson {
 
 	/**
 	 * Formats the Firstname and Lastname to one Displayname
-	 * @return <String>DisplayName</String>
+	 * @return DisplayName
 	 */
 	public String getDisplayName() {
 		return this.getFirstName() + " " + this.getLastName();

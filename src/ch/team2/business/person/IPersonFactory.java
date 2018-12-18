@@ -13,14 +13,14 @@ public interface IPersonFactory {
 	 * @param personType the personType can be found in person.PersonType
 	 * @param firstName  the FirstName of the person
 	 * @param lastName   the LastName of the person
-	 * @return <String>PersonId of the new created Person</String>
+	 * @return PersonId of the new created Person
 	 */
 	String createPerson(PersonType personType, String firstName, String lastName);
 
 	/**
 	 * Declare the method to return a person by their ID
 	 * @param personId
-	 * @return <IPerson>Person with given ID</IPerson>
+	 * @return Person with given ID
 	 */
 	IPerson displayPeople(String personId);
 
@@ -28,7 +28,7 @@ public interface IPersonFactory {
 	 * Declare method to return a list of a people
 	 *
 	 * @param personType
-	 * @return <List>IPerson</List>
+	 * @return IPerson
 	 */
 	List<IPerson> displayPeople(PersonType personType);
 }

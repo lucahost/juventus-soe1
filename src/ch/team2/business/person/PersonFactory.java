@@ -26,7 +26,7 @@ public class PersonFactory implements IPersonFactory {
 
 	/**
 	 * Return the singleton instance
-	 * @return <IPersonFactory>thisInstance</IPersonFactory>
+	 * @return thisInstance
 	 */
 	public static PersonFactory getInstance() {
 		return thisInstance;
@@ -38,7 +38,7 @@ public class PersonFactory implements IPersonFactory {
 	 * @param personType the personType can be found in person.PersonType
 	 * @param firstName  the FirstName of the person
 	 * @param lastName   the LastName of the person
-	 * @return <String>personId</String>
+	 * @return personId
 	 */
 	public String createPerson(PersonType personType, String firstName, String lastName) {
 		IPerson personData = convert(personType, firstName, lastName);
@@ -50,7 +50,7 @@ public class PersonFactory implements IPersonFactory {
 	/**
 	 * Return a person by their given id
 	 * @param personId
-	 * @return <IPerson>person</IPerson>
+	 * @return person
 	 */
 	public IPerson displayPeople(String personId) {
 		IPersonDAOFactory personDAOFactory = PersonDAOFactory.getInstance();
@@ -65,7 +65,7 @@ public class PersonFactory implements IPersonFactory {
 	/**
 	 * Displays a list of people by their personType
 	 * @param personType
-	 * @return <List><IPerson>ListOfPeople</IPerson></List>
+	 * @return ListOfPeople
 	 */
 	public List<IPerson> displayPeople(PersonType personType) {
 		IPersonDAOFactory personDAOFactory = PersonDAOFactory.getInstance();
