@@ -8,17 +8,17 @@ import java.util.List;
  */
 public class PersonRepository {
 
-	// attributes
+	/**
+	 * the DB mock
+	 */
 	private static List<IPersonDAO> persons = new ArrayList<>();
-
-	// methods
 
 	/**
 	 * Return all saved persons
 	 *
 	 * @return IPersonDAO
 	 */
-	public static List<IPersonDAO> getPersons() {
+	public static List<IPersonDAO> getPeople() {
 		return persons;
 	}
 
@@ -33,7 +33,7 @@ public class PersonRepository {
 
 	/**
 	 * @param personId required param the personId
-	 * @return IPersonDAO a person
+	 * @return a dbPerson of type IPersonDAo
 	 */
 	public static IPersonDAO getPersonById(String personId) {
 		for (IPersonDAO person : persons) {

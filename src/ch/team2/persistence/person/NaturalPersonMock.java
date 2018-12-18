@@ -9,14 +9,15 @@ import ch.team2.business.person.PersonType;
 public class NaturalPersonMock implements IPersonDAO {
 
 	// attributes
-
 	private String id;
 	private String firstName;
 	private String lastName;
 	private PersonType personType;
 
-	// constructor
-
+	/**
+	 * Constructor to create a person by personData
+	 * @param personData of type IPerson
+	 */
 	public NaturalPersonMock(IPerson personData) {
 		this.id = PersonRepository.getNextId();
 		this.firstName = personData.getFirstName();
@@ -24,8 +25,7 @@ public class NaturalPersonMock implements IPersonDAO {
 		this.personType = personData.getPersonType();
 	}
 
-	// methods
-
+	// getters
 	public String getId() {
 		return this.id;
 	}

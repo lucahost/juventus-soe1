@@ -63,6 +63,6 @@ public class PersonDAOFactory implements IPersonDAOFactory {
 	 * @return dbPeople
 	 */
 	public List<IPersonDAO> getPeople() {
-		return PersonRepository.getPersons();
+		return PersonRepository.getPeople();
 	}
 }
