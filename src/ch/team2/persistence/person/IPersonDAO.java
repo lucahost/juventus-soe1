@@ -7,15 +7,13 @@ import ch.team2.business.person.PersonType;
  */
 public interface IPersonDAO {
 
-    // attributes
-
     // getters
 	String getId();
+
+	PersonType getPersonType();
 
 	String getFirstName();
 
 	String getLastName();
-
-	PersonType getPersonType();
 }
 

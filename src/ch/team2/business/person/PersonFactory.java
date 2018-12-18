@@ -26,7 +26,7 @@ public class PersonFactory implements IPersonFactory {
 
 	/**
 	 * Return the singleton instance
-	 * @return <PersonFactory>thisInstance</PersonFactory>
+	 * @return <IPersonFactory>thisInstance</IPersonFactory>
 	 */
 	public static PersonFactory getInstance() {
 		return thisInstance;

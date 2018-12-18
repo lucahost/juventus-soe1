@@ -5,23 +5,35 @@ import ch.team2.business.person.IPerson;
 import java.util.List;
 
 /**
- * Knows database access and methods
- * Used to create mocks
+ * Knows database access and
+ * methods used to create mocks
  */
 public class PersonDAOFactory implements IPersonDAOFactory {
-	// attributes
-	private static PersonDAOFactory ourInstance = new PersonDAOFactory();
 
-	// constructor
+	/**
+	 * Defines the private instance attribute
+	 */
+	private static PersonDAOFactory thisInstance = new PersonDAOFactory();
+
+	/**
+	 * Constructor must be private to match singleton pattern
+ 	 */
 	private PersonDAOFactory() {
 	}
 
-	// methods
+	/**
+	 * Return the singleton instance
+	 * @return thisInstance
+	 */
 	public static IPersonDAOFactory getInstance() {
-		return ourInstance;
+		return thisInstance;
 	}
 
-
+	/**
+	 * Create the transferred person by their data
+	 * @param personData the generated personData of type IPerson
+	 * @return IPersonDAO person
+	 */
 	public IPersonDAO createPerson(IPerson personData) {
 		IPersonDAO person = null;
 		if (personData != null) {
@@ -37,10 +49,19 @@ public class PersonDAOFactory implements IPersonDAOFactory {
 		}
 	}
 
+	/**
+	 * Get a person by their id
+	 * @param personId
+	 * @return dbPerson
+	 */
 	public IPersonDAO getPerson(String personId) {
 		return PersonRepository.getPersonById(personId);
 	}
 
+	/**
+	 * Return all people saved in the db
+	 * @return dbPeople
+	 */
 	public List<IPersonDAO> getPeople() {
 		return PersonRepository.getPersons();
 	}
