@@ -1,40 +1,19 @@
 package ch.team2.business.person;
 
 /**
- * Abstract Class for persons
+ * Abstract Class for IPerson
+ * Defines attributes and default getters and setters
  */
-public abstract class PersonBase implements IPerson {
+public abstract class ACPerson implements IPerson {
 	// attributes
 	private String id;
 	private PersonType personType;
 	private String firstName;
 	private String lastName;
 
-	// methods - getter and setter
-
-	@Override
+	// getters and setters
 	public void setId(String id) {
 		this.id = id;
-	}
-
-	@Override
-	public String getFirstName() {
-		return this.firstName;
-	}
-
-	@Override
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	@Override
-	public String getLastName() {
-		return lastName;
-	}
-
-	@Override
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
 	}
 
 	public PersonType getPersonType() {
@@ -45,4 +24,21 @@ public abstract class PersonBase implements IPerson {
 		this.personType = personType;
 	}
 
+	public String getFirstName() {
+		return this.firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public abstract String getDisplayName();
 }

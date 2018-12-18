@@ -13,25 +13,32 @@ import java.util.List;
  */
 public class PersonFactory implements IPersonFactory {
 
-	// attributes
-	private static PersonFactory ourInstance = new PersonFactory();
+	/**
+	 * Defines the private instance attribute
+	 */
+	private static PersonFactory thisInstance = new PersonFactory();
 
-	// constructor
+	/**
+	 * Constructor must be private for singleton
+	 */
 	private PersonFactory() {
 	}
 
-	// methods
+	/**
+	 * Return the singleton instance
+	 * @return <PersonFactory>thisInstance</PersonFactory>
+	 */
 	public static PersonFactory getInstance() {
-		return ourInstance;
+		return thisInstance;
 	}
 
 	/**
-	 * Creates a new Person and returns their id
+	 * Creates a new person and returns their id
 	 *
 	 * @param personType the personType can be found in person.PersonType
 	 * @param firstName  the FirstName of the person
 	 * @param lastName   the LastName of the person
-	 * @return personId
+	 * @return <String>personId</String>
 	 */
 	public String createPerson(PersonType personType, String firstName, String lastName) {
 		IPerson personData = convert(personType, firstName, lastName);
@@ -40,6 +47,11 @@ public class PersonFactory implements IPersonFactory {
 		return dbPerson.getId();
 	}
 
+	/**
+	 * Return a person by their given id
+	 * @param personId
+	 * @return <IPerson>person</IPerson>
+	 */
 	public IPerson displayPeople(String personId) {
 		IPersonDAOFactory personDAOFactory = PersonDAOFactory.getInstance();
 		IPersonDAO person = personDAOFactory.getPerson(personId);
@@ -50,6 +62,11 @@ public class PersonFactory implements IPersonFactory {
 		}
 	}
 
+	/**
+	 * Displays a list of people by their personType
+	 * @param personType
+	 * @return <List><IPerson>ListOfPeople</IPerson></List>
+	 */
 	public List<IPerson> displayPeople(PersonType personType) {
 		IPersonDAOFactory personDAOFactory = PersonDAOFactory.getInstance();
 		List<IPerson> retList = new ArrayList<IPerson>();
@@ -65,23 +82,34 @@ public class PersonFactory implements IPersonFactory {
 		return retList;
 	}
 
-
+	/**
+	 * Returns a IPerson for the given input parameters
+	 * @param personType
+	 * @param firstName
+	 * @param lastName
+	 * @return <IPerson>personData</IPerson>
+	 */
 	public static IPerson convert(PersonType personType, String firstName, String lastName) {
 		IPerson person = null;
 		switch (personType) {
 			case PERSONTYPE_NATURAL:
-				person = new NaturalPerson(firstName, lastName);
+				person = new BCNaturalPerson(firstName, lastName);
 				break;
 		}
 		return person;
 	}
 
+	/**
+	 * Converts a IPersonDAO to a IPerson
+	 * @param dbPerson
+	 * @return <IPerson>personData</IPerson>
+	 */
 	public static IPerson convert(IPersonDAO dbPerson) {
 		IPerson person = null;
 
 		switch (dbPerson.getPersonType()) {
 			case PERSONTYPE_NATURAL:
-				person = new NaturalPerson(dbPerson.getFirstName(), dbPerson.getLastName());
+				person = new BCNaturalPerson(dbPerson.getFirstName(), dbPerson.getLastName());
 		}
 		person.setId(dbPerson.getId());
 		return person;

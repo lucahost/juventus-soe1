@@ -40,6 +40,14 @@ public class ConsoleClientApp {
 	}
 
 
+	/**
+	 * This methods creates a person by PersonType, Firstname and Lastname
+	 * Saves it to the db
+	 * @param personType
+	 * @param firstName
+	 * @param lastName
+	 * @return the ID of the newly created person
+	 */
 	public static String createPerson(PersonType personType, String firstName, String lastName){
 		IPersonFactory personFactory = PersonFactory.getInstance();
 		return personFactory.createPerson(
@@ -49,6 +57,10 @@ public class ConsoleClientApp {
 		);
 	}
 
+	/**
+	 * Displays a person by the id
+	 * @param personId
+	 */
 	public static void displayPerson(String personId){
 		IPersonFactory personFactory = PersonFactory.getInstance();
 		System.out.println(String.format("Person mit ID %s erstellt:", personId));
@@ -56,7 +68,12 @@ public class ConsoleClientApp {
 		System.out.println(person.getDisplayName());
 	}
 
-	public static List<IPerson> displayPeopleByType(PersonType personType){
+	/**
+	 * Displays all people in db by their given type
+	 * @param personType
+	 * @return <List>IPerson</List> all people with the same type
+	 */
+	public static List<IPerson> displayPeople(PersonType personType){
 		IPersonFactory personFactory = PersonFactory.getInstance();
 		System.out.println(String.format("Folgende Personen mit dem Typen '%s' in der DB", personType.getPascalCase()));
 		List<IPerson> people = personFactory.displayPeople(personType);

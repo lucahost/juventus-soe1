@@ -4,21 +4,24 @@ package ch.team2.business.person;
  * Business Class for a natural person.
  * A physic person being (human)
  */
-public class NaturalPerson extends PersonBase {
+public class BCNaturalPerson extends ACPerson {
 
-	// attributes
-
-	// constructor
-	public NaturalPerson(String firstName, String lastName) {
+	/**
+	 * Constructor for BCNaturalPerson
+	 * @param firstName
+	 * @param lastName
+	 */
+	public BCNaturalPerson(String firstName, String lastName) {
 		this.setFirstName(firstName);
 		this.setLastName(lastName);
 		this.setPersonType(PersonType.PERSONTYPE_NATURAL);
 	}
 
+	/**
+	 * Formats the Firstname and Lastname to one Displayname
+	 * @return <String>DisplayName</String>
+	 */
 	public String getDisplayName() {
 		return this.getFirstName() + " " + this.getLastName();
 	}
-
-	// methods
-
 }

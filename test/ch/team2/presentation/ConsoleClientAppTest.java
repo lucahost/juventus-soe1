@@ -53,7 +53,7 @@ public class ConsoleClientAppTest {
 				"Max",
 				"Mustermann"
 		);
-		List<IPerson> people = app.displayPeopleByType(PersonType.PERSONTYPE_NATURAL);
+		List<IPerson> people = app.displayPeople(PersonType.PERSONTYPE_NATURAL);
 		assertTrue(people.size() > 0);
 	}
 

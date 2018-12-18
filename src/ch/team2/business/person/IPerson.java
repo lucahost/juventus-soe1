@@ -4,10 +4,12 @@ package ch.team2.business.person;
  * Interface for PersonBase
  */
 public interface IPerson {
-	// attributes
-
-	// methods - getters
+	// getters and setters
 	void setId(String id);
+
+	PersonType getPersonType();
+
+	void setPersonType(PersonType personType);
 
 	String getFirstName();
 
@@ -18,9 +20,4 @@ public interface IPerson {
 	void setLastName(String lastName);
 
 	String getDisplayName();
-
-	PersonType getPersonType();
-
-	void setPersonType(PersonType personType);
-
 }
