@@ -8,37 +8,49 @@ import java.util.List;
  */
 public class PersonRepository {
 
-	// attributes
+	/**
+	 * the DB mock
+	 */
 	private static List<IPersonDAO> persons = new ArrayList<>();
 
-	// constructor
-
-	// method
-
-	public static List<IPersonDAO> getPersons() {
+	/**
+	 * Return all saved persons
+	 *
+	 * @return IPersonDAO
+	 */
+	public static List<IPersonDAO> getPeople() {
 		return persons;
 	}
-
 
 	/**
 	 * Returns the next personId as arrays are zero indexed
 	 *
 	 * @return int nextId
 	 */
-	public static int getNextId() {
-		return persons.size();
+	public static String getNextId() {
+		return java.util.UUID.randomUUID().toString();
 	}
 
-	public static IPersonDAO getPersonById(int id) {
+	/**
+	 * @param personId required param the personId
+	 * @return a dbPerson of type IPersonDAo
+	 */
+	public static IPersonDAO getPersonById(String personId) {
 		for (IPersonDAO person : persons) {
-			if (person.getId() == id) {
+			if (person.getId() == personId) {
 				return person;
 			}
 		}
 		return null;
 	}
 
-	public static void addPerson(IPersonDAO person){
+
+	/**
+	 * Create a person and save in the the list
+	 *
+	 * @param person the person to save
+	 */
+	public static void addPerson(IPersonDAO person) {
 		persons.add(person);
 	}
 }

@@ -1,40 +1,68 @@
 package ch.team2.persistence.person;
 
-import ch.team2.business.PersonType;
-import ch.team2.business.person.IPersonData;
+import ch.team2.business.person.IPerson;
+
+import java.util.List;
 
 /**
- * Knows database access and methods
- * Used to create mocks
+ * Knows database access and
+ * methods used to create mocks
  */
-public class PersonDAOFactory {
-	// attributes
-	private static PersonDAOFactory ourInstance = new PersonDAOFactory();
+public class PersonDAOFactory implements IPersonDAOFactory {
 
-	// constructor
+	/**
+	 * Defines the private instance attribute
+	 */
+	private static PersonDAOFactory thisInstance = new PersonDAOFactory();
+
+	/**
+	 * Constructor must be private to match singleton pattern
+ 	 */
 	private PersonDAOFactory() {
 	}
 
-	// methods
-	public static PersonDAOFactory getInstance() {
-		return ourInstance;
+	/**
+	 * Return the singleton instance
+	 * @return thisInstance
+	 */
+	public static IPersonDAOFactory getInstance() {
+		return thisInstance;
 	}
 
-
-	public static IPersonDAO createPerson(IPersonData personData) {
+	/**
+	 * Create the transferred person by their data
+	 * @param personData the generated personData of type IPerson
+	 * @return IPersonDAO person
+	 */
+	public IPersonDAO createPerson(IPerson personData) {
 		IPersonDAO person = null;
-		if (personData.getPersonType().equals(PersonType.PERSONTYPE_NATURAL)) {
-			person = new NaturalPersonMock(personData);
-		} else if (personData.equals(PersonType.PERSONTYP_LEGALENTITY)) {
-			person = new LegalEntityMock(personData);
-		} else if (personData.equals(PersonType.PERSONTYPE_USER)) {
-			person = new UserMock(personData);
+		if (personData != null) {
+			switch (personData.getPersonType()) {
+				case PERSONTYPE_NATURAL:
+					person = new NaturalPersonMock(personData);
+					break;
+			}
+			PersonRepository.addPerson(person);
+			return person;
+		} else{
+			throw new IllegalArgumentException("personData is null");
 		}
-		PersonRepository.addPerson(person);
-		return person;
 	}
 
-	public static IPersonDAO getPerson(int personId) {
+	/**
+	 * Get a person by their id
+	 * @param personId String
+	 * @return dbPerson
+	 */
+	public IPersonDAO getPerson(String personId) {
 		return PersonRepository.getPersonById(personId);
+	}
+
+	/**
+	 * Return all people saved in the db
+	 * @return dbPeople
+	 */
+	public List<IPersonDAO> getPeople() {
+		return PersonRepository.getPeople();
 	}
 }

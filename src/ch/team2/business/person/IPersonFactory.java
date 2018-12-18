@@ -1,21 +1,35 @@
 package ch.team2.business.person;
 
-import ch.team2.business.Address;
-import ch.team2.business.ContactMethod;
-import ch.team2.business.PersonType;
-import ch.team2.business.Relationship;
-import ch.team2.persistence.person.IPersonDAO;
+import java.util.List;
 
 /**
  * Interface for PersonFactory
  */
 public interface IPersonFactory {
 
-	// attributes
+	/**
+	 * Declare method to create a new person and save it
+	 *
+	 * @param personType the personType can be found in person.PersonType
+	 * @param firstName  the FirstName of the person
+	 * @param lastName   the LastName of the person
+	 * @return PersonId of the new created Person
+	 */
+	String createPerson(PersonType personType, String firstName, String lastName);
 
-	// methods
+	/**
+	 * Declare the method to return a person by their ID
+	 * @param personId String
+	 * @return Person with given ID
+	 */
+	IPerson displayPeople(String personId);
 
-	IPersonDAO createPerson(PersonType personType, Address address, ContactMethod contactMethod, Relationship relationship);
-
-	IPersonDAO displayPerson(int personId);
+	/**
+	 * Declare method to return a list of a people
+	 *
+	 * @param personType PersonType
+	 * @return IPerson
+	 */
+	List<IPerson> displayPeople(PersonType personType);
 }
+

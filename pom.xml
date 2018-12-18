@@ -28,7 +28,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>ch.team2.presentation.ConsoleClient</mainClass>
+                            <mainClass>ch.team2.presentation.ConsoleClientApp</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -38,16 +38,13 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.3.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-runner</artifactId>
-            <version>1.3.2</version>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
 
+    <name>juventus-soe1</name>
+    <url>https://github.com/Unlockedluca/juventus-soe1</url>
 </project>
