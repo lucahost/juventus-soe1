@@ -11,7 +11,7 @@ public class PersonRepository {
 	/**
 	 * the DB mock
 	 */
-	private static List<IPersonDAO> persons = new ArrayList<>();
+	private static List<IPersonDAO> persons = new ArrayList<IPersonDAO>();
 
 	/**
 	 * Return all saved persons
