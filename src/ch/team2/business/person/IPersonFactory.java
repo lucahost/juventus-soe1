@@ -25,7 +25,7 @@ public interface IPersonFactory {
 	 * @param personId
 	 * @return String displayName
 	 */
-	IPerson displayPerson(String personId);
+	IPerson displayPeople(String personId);
 
 	/**
 	 * Declare method to return a list of a people
@@ -33,6 +33,6 @@ public interface IPersonFactory {
 	 * @param personType
 	 * @return List of People with same Type
 	 */
-	List<IPerson> displayPerson(PersonType personType);
+	List<IPerson> displayPeople(PersonType personType);
 }
 

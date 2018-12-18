@@ -20,6 +20,11 @@ public class ConsoleClientAppTest {
 	}
 
 	@Test
+	public void main(){
+		ConsoleClientApp.main(null);
+	}
+
+	@Test
 	public void createPerson() {
 		String testPersonId = personFactory.createPerson(
 				PersonType.PERSONTYPE_NATURAL,
@@ -36,7 +41,7 @@ public class ConsoleClientAppTest {
 				"Max",
 				"Mustermann"
 		);
-		IPerson person = personFactory.displayPerson(testPersonId);
+		IPerson person = personFactory.displayPeople(testPersonId);
 		assertEquals(person.getDisplayName(), "Max Mustermann");
 	}
 
@@ -64,7 +69,7 @@ public class ConsoleClientAppTest {
 				"Jan",
 				"Doe"
 		);
-		List<IPerson> people = personFactory.displayPerson(PersonType.PERSONTYPE_NATURAL);
+		List<IPerson> people = personFactory.displayPeople(PersonType.PERSONTYPE_NATURAL);
 		assertTrue(people.size() > 0);
 	}
 }

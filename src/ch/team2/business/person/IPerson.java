@@ -6,7 +6,7 @@ package ch.team2.business.person;
 public interface IPerson {
 	// attributes
 
-	// methods
+	// methods - getters
 	void setId(String id);
 
 	String getFirstName();

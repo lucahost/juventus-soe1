@@ -11,13 +11,13 @@ public class PersonFactoryTest {
 	@Test(expected = IllegalArgumentException.class)
 	public void cannotDisplayPersonWithNullId() {
 		IPersonFactory factory = PersonFactory.getInstance();
-		factory.displayPerson("");
+		factory.displayPeople("");
 	}
 
 	@Test()
 	public void noPeopleFound() {
 		IPersonFactory factory = PersonFactory.getInstance();
-		List<IPerson> people = factory.displayPerson(PersonType.PERSONTYPE_USER);
+		List<IPerson> people = factory.displayPeople(PersonType.PERSONTYPE_USER);
 		assertEquals(people.size(), 0);
 	}
 }

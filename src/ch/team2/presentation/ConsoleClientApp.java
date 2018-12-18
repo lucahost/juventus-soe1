@@ -7,8 +7,40 @@ import ch.team2.business.person.PersonType;
 
 import java.util.List;
 
+
+/**
+ * Class used to display data
+ * Could be replaced due future plans with GUI
+ *
+ * @author Luca Hostettler
+ * @author Marc Bischof
+ * @author Florian Bohren
+ */
 public class ConsoleClientApp {
-	public String createPerson(PersonType personType, String firstName, String lastName){
+
+	/**
+	 * Initial point
+	 *
+	 * @param args can be used to start the program with arguments (External)
+	 */
+	public static void main(String[] args) {
+		String person1Id = createPerson(
+				PersonType.PERSONTYPE_NATURAL,
+				"Jon",
+				"Doe"
+		);
+		displayPerson(person1Id);
+
+		String person2Id = createPerson(
+				PersonType.PERSONTYPE_NATURAL,
+				"Jane",
+				"Doe"
+		);
+		displayPerson(person2Id);
+	}
+
+
+	public static String createPerson(PersonType personType, String firstName, String lastName){
 		IPersonFactory personFactory = PersonFactory.getInstance();
 		return personFactory.createPerson(
 				personType,
@@ -17,17 +49,17 @@ public class ConsoleClientApp {
 		);
 	}
 
-	public void displayPerson(String personId){
+	public static void displayPerson(String personId){
 		IPersonFactory personFactory = PersonFactory.getInstance();
 		System.out.println(String.format("Person mit ID %s erstellt:", personId));
-		IPerson person = personFactory.displayPerson(personId);
+		IPerson person = personFactory.displayPeople(personId);
 		System.out.println(person.getDisplayName());
 	}
 
-	public List<IPerson> displayPeopleByType(PersonType personType){
+	public static List<IPerson> displayPeopleByType(PersonType personType){
 		IPersonFactory personFactory = PersonFactory.getInstance();
 		System.out.println(String.format("Folgende Personen mit dem Typen '%s' in der DB", personType.getPascalCase()));
-		List<IPerson> people = personFactory.displayPerson(personType);
+		List<IPerson> people = personFactory.displayPeople(personType);
 		for(IPerson person: people){
 			System.out.println(person.getDisplayName());
 		}

@@ -40,7 +40,7 @@ public class PersonFactory implements IPersonFactory {
 		return dbPerson.getId();
 	}
 
-	public IPerson displayPerson(String personId) {
+	public IPerson displayPeople(String personId) {
 		IPersonDAOFactory personDAOFactory = PersonDAOFactory.getInstance();
 		IPersonDAO person = personDAOFactory.getPerson(personId);
 		if (person != null) {
@@ -50,7 +50,7 @@ public class PersonFactory implements IPersonFactory {
 		}
 	}
 
-	public List<IPerson> displayPerson(PersonType personType) {
+	public List<IPerson> displayPeople(PersonType personType) {
 		IPersonDAOFactory personDAOFactory = PersonDAOFactory.getInstance();
 		List<IPerson> retList = new ArrayList<IPerson>();
 		List<IPersonDAO> dbPeople = personDAOFactory.getPeople();
