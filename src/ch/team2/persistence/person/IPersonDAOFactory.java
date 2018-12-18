@@ -11,14 +11,14 @@ public interface IPersonDAOFactory {
 
 	/**
 	 * Declares a method to create and store a person
-	 * @param personData
+	 * @param personData String
 	 * @return personMock
 	 */
 	IPersonDAO createPerson(IPerson personData);
 
 	/**
 	 * Declares a method to return a personMock by personId
-	 * @param personId
+	 * @param personId String
 	 * @return personMock
 	 */
 	IPersonDAO getPerson(String personId);

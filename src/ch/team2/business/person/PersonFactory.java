@@ -49,7 +49,7 @@ public class PersonFactory implements IPersonFactory {
 
 	/**
 	 * Return a person by their given id
-	 * @param personId
+	 * @param personId String
 	 * @return person
 	 */
 	public IPerson displayPeople(String personId) {
@@ -64,7 +64,7 @@ public class PersonFactory implements IPersonFactory {
 
 	/**
 	 * Displays a list of people by their personType
-	 * @param personType
+	 * @param personType PersonType
 	 * @return ListOfPeople
 	 */
 	public List<IPerson> displayPeople(PersonType personType) {
@@ -84,10 +84,10 @@ public class PersonFactory implements IPersonFactory {
 
 	/**
 	 * Returns a IPerson for the given input parameters
-	 * @param personType
-	 * @param firstName
-	 * @param lastName
-	 * @return <IPerson>personData</IPerson>
+	 * @param personType PersonType
+	 * @param firstName String
+	 * @param lastName String
+	 * @return personData
 	 */
 	public static IPerson convert(PersonType personType, String firstName, String lastName) {
 		IPerson person = null;
@@ -101,8 +101,8 @@ public class PersonFactory implements IPersonFactory {
 
 	/**
 	 * Converts a IPersonDAO to a IPerson
-	 * @param dbPerson
-	 * @return <IPerson>personData</IPerson>
+	 * @param dbPerson the person saved in db
+	 * @return personData
 	 */
 	public static IPerson convert(IPersonDAO dbPerson) {
 		IPerson person = null;

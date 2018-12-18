@@ -8,8 +8,8 @@ public class BCNaturalPerson extends ACPerson {
 
 	/**
 	 * Constructor for BCNaturalPerson
-	 * @param firstName
-	 * @param lastName
+	 * @param firstName String
+	 * @param lastName String
 	 */
 	public BCNaturalPerson(String firstName, String lastName) {
 		this.setFirstName(firstName);

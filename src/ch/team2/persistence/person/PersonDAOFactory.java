@@ -51,7 +51,7 @@ public class PersonDAOFactory implements IPersonDAOFactory {
 
 	/**
 	 * Get a person by their id
-	 * @param personId
+	 * @param personId String
 	 * @return dbPerson
 	 */
 	public IPersonDAO getPerson(String personId) {
