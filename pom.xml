@@ -28,7 +28,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>ch.team2.presentation.ConsoleClient</mainClass>
+                            <mainClass>ch.team2.presentation.ConsoleClientApp</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -45,4 +45,6 @@
         </dependency>
     </dependencies>
 
+    <name>juventus-soe1</name>
+    <url>https://github.com/Unlockedluca/juventus-soe1</url>
 </project>
