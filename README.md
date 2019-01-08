@@ -8,8 +8,8 @@ Use of different design patterns:
 - Singleton
 - Interface
 - Factory
-- Abstraction
-- Component
+- Factory Method
+- Decorator
 
 
 # Functions
